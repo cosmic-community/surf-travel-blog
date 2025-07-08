@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getAuthor, getPostsByAuthor } from '@/lib/cosmic';
 import AuthorCard from '@/components/AuthorCard';
 import PostCard from '@/components/PostCard';
+import { Post } from '@/types';
 
 interface AuthorPageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +38,7 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
               {posts.length} {posts.length === 1 ? 'Post' : 'Posts'} by {author.metadata.name}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
+              {posts.map((post: Post) => (
                 <PostCard key={post.id} post={post} />
               ))}
             </div>

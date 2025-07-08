@@ -1,6 +1,7 @@
 import { getPosts, getCategories } from '@/lib/cosmic';
 import PostCard from '@/components/PostCard';
 import CategoryBadge from '@/components/CategoryBadge';
+import { Post, Category } from '@/types';
 
 export default async function HomePage() {
   const posts = await getPosts();
@@ -19,7 +20,7 @@ export default async function HomePage() {
               Stories from wave riders around the world
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              {categories.map((category) => (
+              {categories.map((category: Category) => (
                 <CategoryBadge key={category.id} category={category} />
               ))}
             </div>
@@ -34,7 +35,7 @@ export default async function HomePage() {
             Latest Stories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
+            {posts.map((post: Post) => (
               <PostCard key={post.id} post={post} />
             ))}
           </div>

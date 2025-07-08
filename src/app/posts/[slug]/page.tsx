@@ -21,7 +21,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const { metadata } = post;
   const { title, content, featured_image, author, category, tags, location } = metadata;
   
-  const htmlContent = DOMPurify.sanitize(marked(content));
+  const htmlContent = DOMPurify.sanitize(await marked(content));
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -44,7 +44,7 @@ export default async function PostPage({ params }: PostPageProps) {
               <AuthorCard author={author} />
               {tags && (
                 <div className="flex flex-wrap gap-2">
-                  {tags.split(',').map((tag, index) => (
+                  {tags.split(',').map((tag: string, index: number) => (
                     <span 
                       key={index}
                       className="px-2 py-1 bg-gray-100 text-gray-600 text-sm rounded"

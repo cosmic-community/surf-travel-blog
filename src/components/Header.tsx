@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getCategories } from '@/lib/cosmic';
+import { Category } from '@/types';
 
 export default async function Header() {
   const categories = await getCategories();
@@ -22,7 +23,7 @@ export default async function Header() {
             >
               Home
             </Link>
-            {categories.slice(0, 4).map((category) => (
+            {categories.slice(0, 4).map((category: Category) => (
               <Link
                 key={category.id}
                 href={`/categories/${category.slug}`}
