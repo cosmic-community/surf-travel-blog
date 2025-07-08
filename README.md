@@ -1,5 +1,7 @@
 # Surf Travel Blog
 
+LFG Cosmic
+
 A modern Next.js surf travel blog featuring stories from wave riders around the world. Built with Cosmic CMS for content management and Tailwind CSS for beautiful, responsive styling.
 
 ![Surf Travel Blog](https://imgix.cosmicjs.com/0501d5b0-5c2f-11f0-a051-23c10f41277a-photo-1507525428034-b723cf961d3e-1752001745826.jpg?w=800&h=400&fit=crop&auto=format,compress)
